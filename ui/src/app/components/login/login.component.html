@@ -1,0 +1,52 @@
+<div class="container-fluid" style="overflow: hidden;">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image">
+            <img class="animate__animated animate__backInDown img-fluid" style="padding: 50px;" src="/assets/geekible-logo.png">
+        </div>
+  
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+  
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h2 class="display-4 animate__animated animate__backInDown">geekible.org</h2>
+                            <p class="text-muted mb-4 animate__animated animate__backInUp">Service Administration</p>
+                            <form>
+                                <div class="form-group mb-3">
+                                    <input type="email" id="inputEmail" placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btn-black text-uppercase mb-2 rounded-pill shadow-sm" (click)="doLogin()">Sign in</button>
+  
+                                <button (click)="showForgottenPassword = true;" class="btn btn-primary btn-block btn-black text-uppercase mb-2 rounded-pill shadow-sm">Request Password Reset Link</button>
+  
+                                <div class="padded-divider"></div>
+  
+                                <div *ngIf="showForgottenPassword">
+                                    Please enter your email address or username below and we will email you a link to reset your password.
+                                    <div class="padded-divider"></div>
+                                    <div class="form-group mb-3">
+                                        <input type="email" id="inputEmail" placeholder="Email address or Username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" [(ngModel)]="forgottenPasswordEmailaddress" [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <button (click)="forgottenPassword()" class="btn btn-primary btn-block btn-black text-uppercase mb-2 rounded-pill shadow-sm">Send reset link</button>
+                                </div>
+  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End -->
+  
+            </div>
+        </div>
+        <!-- End -->
+  
+    </div>
+  </div>
+  

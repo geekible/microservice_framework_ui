@@ -1,0 +1,62 @@
+<app-navigation-top></app-navigation-top>
+
+<div class="page-container">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User List</li>
+            </ol>
+        </nav>
+
+        <div class="list-header">
+            <div class="row">
+                <div class="col-1">
+                    #
+                </div>
+                <div class="col-3">
+                    Display Name
+                </div>
+                <div class="col-3">
+                    E-mail Address
+                </div>
+                <div class="col-3">
+                    Username
+                </div>
+                <div class="col-2">
+                    Actions
+                </div>
+            </div>
+        </div>
+
+        <!--list items-->
+        <div class="list-item" *ngFor="let u of users">
+            <div class="row">
+                <div class="col-1">
+                    {{u.ID}}
+                </div>
+                <div class="col-3">
+                    {{u.DisplayName}}
+                </div>
+                <div class="col-3">
+                    {{u.EmailAddress}}
+                </div>
+                <div class="col-3">
+                    {{u.Username}}
+                </div>
+                <div class="col-2" align="end">
+                    <button mat-icon-button (click)="viewUser(u.ID)">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end list items-->
+    </div>
+</div>
+
+<app-footer></app-footer>

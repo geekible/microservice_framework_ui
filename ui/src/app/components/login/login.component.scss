@@ -1,0 +1,35 @@
+.login,
+.image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background: #16222A;
+    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+    background: linear-gradient(59deg, #3A6073, #16222A);
+    color: white;
+}
+
+h2 {
+    font-weight: 300;
+    line-height: 1;
+}
+
+p {
+    font-weight: 300;
+    font-size: 46px;
+    line-height: 1;
+}
+
+.btn-black {
+    background-color: #3A6073 !important;
+    color: #fff;
+    border: 1px solid #3A6073;
+}
+
+a {
+    text-decoration: none;
+    color: #3A6073;
+    font-weight: bolder;
+    cursor: pointer;
+}
