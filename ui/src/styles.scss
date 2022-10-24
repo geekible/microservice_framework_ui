@@ -3,15 +3,13 @@
 html,
 body {
     height: 100%;
-}
-
-body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .page-container {
     margin-top: 20px;
+    min-height: 70vh;
 }
 
 .list-header {
@@ -31,3 +29,34 @@ body {
     border-bottom: 1px solid #3A6073;
     font-size: 1em;
 }
+
+.card {
+    border-top: 3px solid #3A6073 !important;
+}
+
+.breadcrumb a {
+    color: #3A6073 !important;
+}
+
+.page-heading {
+    color: #3A6073 !important;
+}
+
+.select-list {
+    padding: 10px;
+    padding-right: 30px;
+    border-bottom: 1px solid #3A6073;
+}
+
+.select-list :hover {
+    background-color: #F5F5F5;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+mat-selection-list {
+    height: 210px;
+    overflow-y: scroll;
+  }

@@ -23,6 +23,6 @@ export class UserListComponent implements OnInit {
   }
 
   viewUser(userId: number) {
-    this.router.navigateByUrl('/user/maintenance')
+    this.router.navigateByUrl('/user/maintenance/' + userId);
   }
 }

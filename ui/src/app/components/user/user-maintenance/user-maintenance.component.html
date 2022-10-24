@@ -3,7 +3,7 @@
 <div class="page-container">
     <div class="container">
 
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" class="animate__animated animate__backInLeft">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/user/list">User List</a></li>
@@ -11,9 +11,72 @@
             </ol>
         </nav>
 
-        <div class="row">
-            
+        <div class="row animate__animated animate__backInRight">
+            <div class="col-12">
+                <h3 class="page-heading">User Maintenance</h3>
+            </div>
         </div>
+
+        <div class="row">
+            <!--user details-->
+            <div class="col-6">
+                <div class="card shadow p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h4 class="card-title">User Details</h4>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Display Name</mat-label>
+                            <input type="text" matInput placeholder="John Doe" [(ngModel)]="user.DisplayName">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Username</mat-label>
+                            <input type="text" matInput placeholder="John Doe" [(ngModel)]="user.Username">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Email Address</mat-label>
+                            <input type="text" matInput placeholder="John Doe" [(ngModel)]="user.EmailAddress">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <!--end user details-->
+            <!--roles-->
+            <div class="col-6">
+                <div class="card shadow p-3 mb-5 bg-white rounded">
+                    <div class="card-body">
+                        <h4 class="card-title">User Roles</h4>
+
+                        <ul class="list-unstyled" style="height: 195px; overflow-y:scroll">
+                            <li *ngFor="let ur of userRoles" class="select-list">
+                                <div class="row">
+                                    <div class="col-11">
+                                        {{ur.RoleName}}
+                                    </div>
+                                    <div class="col-1">
+                                        <mat-checkbox [(ngModel)]="ur.IsSelected"></mat-checkbox>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end roles-->
+        </div>
+
+        <hr>
+
+        <!--actions-->
+        <div class="row">
+            <div class="col-12" align="end">
+                <button mat-mini-fab color="primary" matTooltip="Save" (click)="update()"><mat-icon>save</mat-icon></button>
+                &nbsp;
+                <button mat-mini-fab color="warn" matTooltip="Back" (click)="backToList()"><mat-icon>arrow_back</mat-icon></button>
+            </div>
+        </div>
+        <!--end actions-->
 
     </div>
 </div>

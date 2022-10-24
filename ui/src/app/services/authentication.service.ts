@@ -24,4 +24,29 @@ export class AuthenticationService {
     return this.httpClient.get<AuthenticationCredential[]>(this.apiEndPoint + '/getall')
       .pipe(catchError(this.errorService.formatError));
   }
+
+  getById(id: number): Observable<AuthenticationCredential> {
+    return this.httpClient.get<AuthenticationCredential>(this.apiEndPoint + '/getbyid?id=' + id)
+      .pipe(catchError(this.errorService.formatError));
+  }
+
+  getModel(): Observable<AuthenticationCredential> {
+    return this.httpClient.get<AuthenticationCredential>(this.apiEndPoint + '/getmodel')
+      .pipe(catchError(this.errorService.formatError));
+  }
+
+  getByEmail(email: string): Observable<AuthenticationCredential> {
+    return this.httpClient.get<AuthenticationCredential>(this.apiEndPoint + '/getbyemail?email=' + email)
+      .pipe(catchError(this.errorService.formatError));
+  }
+
+  update(model: AuthenticationCredential): Observable<AuthenticationCredential> {
+    return this.httpClient.put<AuthenticationCredential>(this.apiEndPoint + '/update', model)
+      .pipe(catchError(this.errorService.formatError));
+  }
+
+  updatePassword(model: AuthenticationCredential): Observable<AuthenticationCredential> {
+    return this.httpClient.put<AuthenticationCredential>(this.apiEndPoint + '/updatepassword', model)
+      .pipe(catchError(this.errorService.formatError));
+  }
 }
