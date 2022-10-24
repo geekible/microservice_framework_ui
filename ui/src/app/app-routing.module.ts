@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { PasswordResetComponent } from './components/user/password-reset/password-reset.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserMaintenanceComponent } from './components/user/user-maintenance/user-maintenance.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'user/maintenance/:id',
     component: UserMaintenanceComponent
+  },
+  {
+    path: 'user/password-reset/:userId',
+    component: PasswordResetComponent
   }
 ];
 

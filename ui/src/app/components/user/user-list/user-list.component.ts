@@ -25,4 +25,8 @@ export class UserListComponent implements OnInit {
   viewUser(userId: number) {
     this.router.navigateByUrl('/user/maintenance/' + userId);
   }
+
+  resetPassword(userId: number) {
+    this.router.navigateByUrl('/user/password-reset/' + userId);
+  }
 }

@@ -18,4 +18,9 @@ export class UserRoleService {
     return this.httpClient.get<AuthenticationUserRoleDto[]>(this.apiEndPoint + '/getbyemailaddress?email=' + emailAddress + '&userId=' + userId)
       .pipe(catchError(this.errorService.formatError));
   }
+
+  create(model: AuthenticationUserRoleDto): Observable<AuthenticationUserRoleDto> {
+    return this.httpClient.post<AuthenticationUserRoleDto>(this.apiEndPoint + '/create', model)
+      .pipe(catchError(this.errorService.formatError));
+  }
 }

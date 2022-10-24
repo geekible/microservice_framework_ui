@@ -20,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PasswordResetComponent } from './components/user/password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavigationTopComponent,
     FooterComponent,
     UserListComponent,
-    UserMaintenanceComponent
+    UserMaintenanceComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
