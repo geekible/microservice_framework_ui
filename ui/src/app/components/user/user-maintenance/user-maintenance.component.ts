@@ -65,6 +65,33 @@ export class UserMaintenanceComponent implements OnInit {
     this.router.navigateByUrl('/user/list');
   }
 
+  saveUser() {
+    if (this.user.ID > 0) {
+      this.update();
+    } else {
+      this.create();
+    }
+  } 
+
+  create() {
+    this.authService.create(this.user)
+      .subscribe(res => {
+        this.user = res;
+
+        this.userRoles.forEach(ur => {
+          if (ur.IsSelected) {
+            ur.UserId = res.ID
+            this.userRoleService.create(ur)
+              .subscribe(() => { });
+          } else {
+            
+          }
+        });
+
+        this.snackbar.open('Saved successfully', "Close")
+      });
+  }
+
   update() {
     this.authService.update(this.user)
       .subscribe(res => {

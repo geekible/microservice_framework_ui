@@ -1,6 +1,19 @@
 .header {
-    background: #16222A;
-    background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
-    background: linear-gradient(59deg, #3A6073, #16222A);
-    color: white;
-  }
+  background: #16222A;
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: white;
+}
+
+.header a {
+  color: #fff;
+}
+
+.navbar .dropdown-menu {
+  background-color: #3A6073;
+}
+
+.dropdown-menu > li {
+  background-image: none;
+  background-color: #3A6073;
+}

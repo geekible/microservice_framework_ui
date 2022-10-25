@@ -49,4 +49,14 @@ export class AuthenticationService {
     return this.httpClient.put<AuthenticationCredential>(this.apiEndPoint + '/updatepassword', model)
       .pipe(catchError(this.errorService.formatError));
   }
+
+  create(model: AuthenticationCredential): Observable<AuthenticationCredential> {
+    return this.httpClient.post<AuthenticationCredential>(this.apiEndPoint + '/create', model)
+      .pipe(catchError(this.errorService.formatError));
+  }
+
+  delete(userId: number): Observable<any> {
+    return this.httpClient.delete(this.apiEndPoint + '/delete?userId=' + userId)
+      .pipe(catchError(this.errorService.formatError));
+  }
 }

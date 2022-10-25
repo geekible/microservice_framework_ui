@@ -1,6 +1,29 @@
-<div class="header" style="height: 75px;">
-    <div class="container" style="padding-top: 10px;">
-        <img height="50px" src="/assets/geekible-logo.png">
+<nav id="sidebar-wrapper" class="navbar header header-top fixed-top navbar-expand-md navbar-expand-lg navbar-expand-xl">
+    <div class="container">
+        <span class="navbar-toggler-icon leftmenutrigger"></span>
+        <a class="navbar-brand" href="/home"><img height="50px" src="/assets/geekible-logo.png"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems"
+            aria-controls="navbarItems" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse show" id="navbarItems">
+            <ul class="navbar-nav animate side-nav">
+                <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> My Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="/user/list"> User's</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Open Your Timesheet</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        Configuration <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link" href="#">Auth Roles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Person 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Open Timesheet Sign Off Report</a></li>
+            </ul>
+        </div>
     </div>
-    
-</div>
+</nav>

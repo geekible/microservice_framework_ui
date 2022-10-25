@@ -54,7 +54,7 @@
                     <button mat-icon-button matTooltip="Update password" (click)="resetPassword(u.ID)">
                         <mat-icon>key</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" matTooltip="Delete user">
+                    <button mat-icon-button color="warn" matTooltip="Delete user" (click)="showDeleteUserDialog(u)">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>
