@@ -26,6 +26,7 @@ import { DeleteUserComponent } from './components/user/delete-user/delete-user.c
 import { AuthRoleConfigComponent } from './components/configuration/auth-role-config/auth-role-config.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewLogEntryDialogComponent } from './components/dashboard/view-log-entry-dialog/view-log-entry-dialog.component';
+import { AuthGuardGuard } from './services/auth-guard.guard';
 
 @NgModule({
   declarations: [

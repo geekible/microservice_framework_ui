@@ -20,6 +20,8 @@ export class AuthenticationService {
       .pipe(catchError(this.errorService.formatError));
   }
 
+  
+
   getAll(): Observable<AuthenticationCredential[]> {
     return this.httpClient.get<AuthenticationCredential[]>(this.apiEndPoint + '/getall')
       .pipe(catchError(this.errorService.formatError));
