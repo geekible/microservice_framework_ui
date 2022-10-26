@@ -1,0 +1,100 @@
+<app-navigation-top></app-navigation-top>
+
+<div class="page-container">
+    <div class="container">
+
+        <nav aria-label="breadcrumb" class="animate__animated animate__backInLeft">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </nav>
+
+        <div class="row animate__animated animate__backInRight">
+            <div class="col-12">
+                <h3 class="page-heading">Service Dashboard</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="list-header">
+                    <div class="row">
+                        <div class="col-7">
+                            Service
+                        </div>
+                        <div class="col-3">
+                            Status
+                        </div>
+                        <div class="col-1" align="end">
+                            <button mat-icon-button matTooltip="Refresh" (click)="refreshServiceStatus()">
+                                <mat-icon>sync</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item" *ngFor="let s of servicesWithStatus">
+                    <div class="row">
+                        <div class="col-7">
+                            {{s.ServiceName}}
+                        </div>
+                        <div class="col-3">
+                            <strong>{{s.Status}}</strong>
+                        </div>
+                        <div class="col-1"[ngStyle]="s.Status == 'Online' ? {'background-color': 'green'} : {'background-color': 'red'}">
+
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="padded-divider"></div>
+
+        <div class="row animate__animated animate__backInRight">
+            <div class="col-12">
+                <h3 class="page-heading">Service Log</h3>
+            </div>
+        </div>
+
+        <div class="list-header">
+            <div class="row">
+                <div class="col-2">
+                    Log Level
+                </div>
+                <div class="col-2">
+                    Service
+                </div>
+                <div class="col-7">
+                    Log Entry
+                </div>
+                <div class="col-1">
+                    <button mat-icon-button matTooltip="Refresh" (click)="refreshServiceLog()">
+                        <mat-icon>sync</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-item" *ngFor="let log of logEnteries">
+            <div class="row">
+                <div class="col-2">
+                    {{log.LogLevel}}
+                </div>
+                <div class="col-2">
+                    {{log.Service}}
+                </div>
+                <div class="col-7">
+                    {{log.Message}}
+                </div>
+                <div class="col-1">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

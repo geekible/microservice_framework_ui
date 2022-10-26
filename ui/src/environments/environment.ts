@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   authEndPoint: 'http://localhost:5002/',
+  serviceRegistryEndPoint: 'http://localhost:5000/',
+  logServiceEndPoint: 'http://localhost:5001/'
 };
 
 /*

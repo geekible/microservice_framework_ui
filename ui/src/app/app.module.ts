@@ -23,6 +23,8 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
 import { UserMaintenanceComponent } from './components/user/user-maintenance/user-maintenance.component';
 import { PasswordResetComponent } from './components/user/password-reset/password-reset.component';
 import { DeleteUserComponent } from './components/user/delete-user/delete-user.component';
+import { AuthRoleConfigComponent } from './components/configuration/auth-role-config/auth-role-config.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { DeleteUserComponent } from './components/user/delete-user/delete-user.c
     UserListComponent,
     UserMaintenanceComponent,
     PasswordResetComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    AuthRoleConfigComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

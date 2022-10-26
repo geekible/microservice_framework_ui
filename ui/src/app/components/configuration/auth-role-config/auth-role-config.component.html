@@ -1,0 +1,72 @@
+<app-navigation-top></app-navigation-top>
+
+<div class="page-container">
+    <div class="container">
+
+        <nav aria-label="breadcrumb" class="animate__animated animate__backInLeft">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Configuration</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Authentication Roles</li>
+            </ol>
+        </nav>
+
+        <div class="row animate__animated animate__backInRight">
+            <div class="col-12">
+                <h3 class="page-heading">Authentication Roles</h3>
+            </div>
+        </div>
+
+        <!--list header-->
+        <div class="list-header">
+            <div class="row">
+                <div class="col-10">
+                    Role
+                </div>
+                <div class="col-2" align="end">
+                    <button mat-icon-button matTooltip="Add role" (click)="showMaintenance(0)">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end list header-->
+        <!--add/edit-->
+        <div class="list-item" *ngIf="showEditRole">
+            <div class="row">
+                <div class="col-10">
+                    <mat-form-field>
+                        <mat-label>Role Name</mat-label>
+                        <input type="text" matInput [(ngModel)]="editRole.Role">
+                    </mat-form-field>
+                </div>
+                <div class="col-2" align="end">
+                    <button mat-icon-button matTooltip="View maintenance" (click)="saveRole()">
+                        <mat-icon>done</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="View maintenance" (click)="closeEdit()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end add/edit-->
+        <!--list items-->
+        <div class="list-item" *ngFor="let r of roles">
+            <div class="row">
+                <div class="col-10">
+                    {{r.Role}}
+                </div>
+                <div class="col-2" align="end">
+                    <button mat-icon-button matTooltip="View maintenance" (click)="showMaintenance(r.ID)">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end list items-->
+
+    </div>
+</div>
+
+<app-footer></app-footer>

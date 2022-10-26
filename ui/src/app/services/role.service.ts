@@ -18,4 +18,14 @@ export class RoleService {
     return this.httpClient.get<Role[]>(this.apiEndpoint + '/getall')
       .pipe(catchError(this.errorService.formatError));
   }
+
+  save(model: Role): Observable<Role> {
+    if (model.ID === 0) {
+      return this.httpClient.post<Role>(this.apiEndpoint + '/create', model)
+        .pipe(catchError(this.errorService.formatError));
+    } else {
+      return this.httpClient.put<Role>(this.apiEndpoint + '/update', model)
+        .pipe(catchError(this.errorService.formatError));
+    }
+  }
 }
