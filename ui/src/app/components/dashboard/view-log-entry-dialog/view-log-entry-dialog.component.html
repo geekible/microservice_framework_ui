@@ -1,0 +1,58 @@
+<h1 mat-dialog-title>Log Entry</h1>
+<div mat-dialog-content>
+
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Log Level</mat-label>
+                <input matInput [(ngModel)]="data.LogLevel" readonly>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Service</mat-label>
+                <input matInput [(ngModel)]="data.Service" readonly>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>User</mat-label>
+                <input matInput [(ngModel)]="data.User" readonly>
+            </mat-form-field>
+
+        </div>
+
+        <div class="col-6">
+            <mat-form-field>
+                <mat-label>Date/Time</mat-label>
+                <input matInput [(ngModel)]="createdDate" readonly>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Source</mat-label>
+                <input matInput [(ngModel)]="data.Source" readonly>
+            </mat-form-field>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field>
+                <mat-label>Log Message</mat-label>
+                <textarea matInput rows="10" [(ngModel)]="data.Message"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field>
+                <mat-label>Stack Trace</mat-label>
+                <textarea matInput rows="10" [(ngModel)]="data.StackTrace"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-mini-fab color="warn" (click)="closeClick()"><mat-icon>close</mat-icon></button>
+</div>

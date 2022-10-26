@@ -1,5 +1,6 @@
 export interface LogEntry {
     ID: number;
+	CreatedAt: Date;
     LogLevel: string;
 	Message: string;
 	Service: string;

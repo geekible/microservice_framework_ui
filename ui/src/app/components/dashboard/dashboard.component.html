@@ -48,6 +48,27 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-6">
+                <div class="list-header">
+                    <div class="row">
+                        <div class="col-3">
+                            Queued Time
+                        </div>
+                        <div class="col-4">
+                            Notification Type
+                        </div>
+                        <div class="col-3">
+                            Status
+                        </div>
+                        <div class="col-2" align="end">
+                            <button mat-icon-button matTooltip="Refresh">
+                                <mat-icon>sync</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="padded-divider"></div>
@@ -69,7 +90,7 @@
                 <div class="col-7">
                     Log Entry
                 </div>
-                <div class="col-1">
+                <div class="col-1" align="end">
                     <button mat-icon-button matTooltip="Refresh" (click)="refreshServiceLog()">
                         <mat-icon>sync</mat-icon>
                     </button>
@@ -88,8 +109,10 @@
                 <div class="col-7">
                     {{log.Message}}
                 </div>
-                <div class="col-1">
-
+                <div class="col-1" align="end">
+                    <button mat-icon-button matTooltip="View log entry" (click)="viewLogEntry(log)">
+                        <mat-icon>visibility</mat-icon>
+                    </button>
                 </div>
             </div>
         </div>

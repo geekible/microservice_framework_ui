@@ -25,6 +25,7 @@ import { PasswordResetComponent } from './components/user/password-reset/passwor
 import { DeleteUserComponent } from './components/user/delete-user/delete-user.component';
 import { AuthRoleConfigComponent } from './components/configuration/auth-role-config/auth-role-config.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ViewLogEntryDialogComponent } from './components/dashboard/view-log-entry-dialog/view-log-entry-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     PasswordResetComponent,
     DeleteUserComponent,
     AuthRoleConfigComponent,
-    DashboardComponent
+    DashboardComponent,
+    ViewLogEntryDialogComponent
   ],
   imports: [
     BrowserModule,
