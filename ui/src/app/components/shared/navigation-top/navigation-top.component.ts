@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthModel } from 'src/app/models/auth.model';
 
 @Component({
   selector: 'app-navigation-top',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationTopComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  doLogOut() {
+    let authModel = new AuthModel();
+    authModel.doLogout();
+    this.router.navigateByUrl('/');
+  }
 }

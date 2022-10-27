@@ -20,22 +20,26 @@ const routes: Routes = [
   },
   {
     path: 'user/maintenance/:id',
-    component: UserMaintenanceComponent
+    component: UserMaintenanceComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'user/password-reset/:userId',
-    component: PasswordResetComponent
+    component: PasswordResetComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'config',
     children: [
       {
         path: 'auth-roles',
-        component: AuthRoleConfigComponent
+        component: AuthRoleConfigComponent,
+        canActivate: [AuthGuardGuard]
       }
     ]
   }
