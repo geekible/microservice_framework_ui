@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -27,6 +27,7 @@ import { AuthRoleConfigComponent } from './components/configuration/auth-role-co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewLogEntryDialogComponent } from './components/dashboard/view-log-entry-dialog/view-log-entry-dialog.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
+import { BearerTokenInterceptor } from './interceptors/bearer-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,13 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
     MatSnackBarModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BearerTokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,22 +28,29 @@ export class AuthModel {
         } else {
             this._isAuthenticated = false;
         }
+
         return this._isAuthenticated;
     }
 
     public get emailAddress() {
-        let val = localStorage.getItem(this.emailAddressName)!;
+        let val = localStorage.getItem(this.encryptData(this.emailAddressName))!;
         val = this.decryptData(val);
         if (val) {
+            this._emailAddress = val;
             return this._emailAddress;
         }
         return null;
     }
 
     public get token() {
-        let val = localStorage.getItem(this.tokenName)!;
+        let val = localStorage.getItem(this.encryptData(this.tokenName))!;
+        if (!val) {
+            return null;
+        }
+
         val = this.decryptData(val);
         if (val) {
+            this._token = val;
             return this._token;
         }
         return null
